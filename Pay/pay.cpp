@@ -17,7 +17,7 @@ class Payslip {
       float sss = 500;
       float pagibig = 200;
       float philhealth = 100;
-      stringstream ss;
+      
        
     public:
        // mutators
@@ -78,42 +78,42 @@ class Payslip {
           return taxrate;
        }
        float getWithholdingTax() {
-          withholdingtax = getGrossPay() * getTaxRate();
+          withholdingtax = getGrossPay() * (getTaxRate()*0.100*0.100);
           return withholdingtax;
        }
 
        // custom methods
        void determinePayGradeAndTaxRate() {
-          if(getBasicSalary() > 10000 && getBasicSalary() < 15000) {
+          if(getBasicSalary() >= 10000 && getBasicSalary() < 15000) {
              setPayGrade("A");
-             setTaxRate(0.10);
-          } else if(getBasicSalary() > 15000 && getBasicSalary() < 20000) {
+             setTaxRate(10);
+          } else if(getBasicSalary() >= 15000 && getBasicSalary() < 20000) {
              setPayGrade("B");
-             setTaxRate(0.10);
-          } else if(getBasicSalary() > 20000 && getBasicSalary() < 25000) {
+             setTaxRate(10);
+          } else if(getBasicSalary() >= 20000 && getBasicSalary() < 25000) {
              setPayGrade("A");
-             setTaxRate(0.15);
-          } else if(getBasicSalary() > 25000 && getBasicSalary() < 30000) {
+             setTaxRate(15);
+          } else if(getBasicSalary() >= 25000 && getBasicSalary() < 30000) {
              setPayGrade("B");
-             setTaxRate(0.15);
-          } else if(getBasicSalary() > 30000 && getBasicSalary() < 35000) {
+             setTaxRate(15);
+          } else if(getBasicSalary() >= 30000 && getBasicSalary() < 35000) {
              setPayGrade("A");
-             setTaxRate(0.20);
-          } else if(getBasicSalary() > 35000 && getBasicSalary() < 40000) {
+             setTaxRate(20);
+          } else if(getBasicSalary() >= 35000 && getBasicSalary() < 40000) {
              setPayGrade("B");
-             setTaxRate(0.20);
-          } else if(getBasicSalary() > 40000 && getBasicSalary() < 45000) {
+             setTaxRate(20);
+          } else if(getBasicSalary() >= 40000 && getBasicSalary() < 45000) {
              setPayGrade("A");
-             setTaxRate(0.25);
-          } else if(getBasicSalary() > 45000 && getBasicSalary() < 50000) {
+             setTaxRate(25);
+          } else if(getBasicSalary() >= 45000 && getBasicSalary() < 50000) {
              setPayGrade("B");
-             setTaxRate(0.25);
-          } else if(getBasicSalary() > 50000 && getBasicSalary() < 55000) {
+             setTaxRate(25);
+          } else if(getBasicSalary() >= 50000 && getBasicSalary() < 55000) {
              setPayGrade("A");
-             setTaxRate(0.30);
-          } else if(getBasicSalary() > 55000 && getBasicSalary() < 60000) {
+             setTaxRate(30);
+          } else if(getBasicSalary() >= 55000 && getBasicSalary() < 60000) {
              setPayGrade("B");
-             setTaxRate(0.30);
+             setTaxRate(30);
           }
        }
        void computePay() {
